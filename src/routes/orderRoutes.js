@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const orderController = require("../controllers/orderController");
-const { validateUser, authorizeUser } = require("../middleware/auth");
+const { validateUser } = require("../middleware/auth");
 
 /*
  * GET
  */
-router.get("/:id", validateUser, canViewOrder, orderController.show);
+router.get("/:id", validateUser, orderController.show);
 
 /*
  * POST
